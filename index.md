@@ -1,2 +1,19 @@
-Hello!
-Pt2
+# Hi
+## Bye
+[random link](https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule)
+![random image](https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Beijing_bouddhist_monk_2009_IMG_1486.JPG/1200px-Beijing_bouddhist_monk_2009_IMG_1486.JPG)
+
+*weird writting*  **weirder writting**
+
+> This seems cool
+
+* first
+* sec
+* third
+
+1. idk
+2. wtf
+3. omg
+
+Cool line:
+---
