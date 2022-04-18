@@ -12,8 +12,7 @@ In order to see our CS15L specific account login we must go [here](https://sdacs
 
 Now in VSCode we can open a new terminal. (Terminal, New Terminal)
 
-First step is to type 
-> $ ssh cs15lsp22zz@ieng6.ucsd.edu 
+First step is to type ```$ ssh cs15lsp22zz@ieng6.ucsd.edu```.
 
 but replace zz with the 3 letter code found from earlier. 
 
@@ -35,19 +34,19 @@ Now you are connected to the ieng6 server and you can now use terminal commands 
 
 Now you should try running some commands in this terminal.  Here are some examples
 
-1. cd ~
+1. ```cd ~```
 
-2. cd
+2. ```cd```
 
-3. ls -lat
+3. ```ls -lat```
 
-4. ls -a
+4. ```ls -a```
 
-5. ls <directory> where <directory> is /home/linux/ieng6/cs15lsp22/cs15lsp22abc, where the abc is your 3 letter code
+5. `ls <directory> where <directory> is /home/linux/ieng6/cs15lsp22/cs15lsp22abc, where the abc is your 3 letter code`
 
-6. cp /home/linux/ieng6/cs15lsp22/public/hello.txt ~/
+6. `cp /home/linux/ieng6/cs15lsp22/public/hello.txt ~/`
 
-7. cat /home/linux/ieng6/cs15lsp22/public/hello.txt
+7. `cat /home/linux/ieng6/cs15lsp22/public/hello.txt`
 
 an example of using one of these commands will look like 
 
@@ -55,7 +54,8 @@ an example of using one of these commands will look like
 
 Now you will use **scp** in order to copy over some files between your client and the server.  First create a file called *WhereAmI.java* and put:
 
-> class WhereAmI {
+```
+class WhereAmI {
   public static void main(String[] args) {
     System.out.println(System.getProperty("os.name"));
     System.out.println(System.getProperty("user.name"));
@@ -63,9 +63,10 @@ Now you will use **scp** in order to copy over some files between your client an
     System.out.println(System.getProperty("user.dir"));
   }
 }
+```
 
 When in your own client (if still on the server type **exit** to get back to your home directory on your client) and run *javac* and *java* for **WhereAmI.java** and notice the results.  Now run 
-> scp WhereAmI.java cs15lsp22zz@ieng6.ucsd.edu:~/
+`scp WhereAmI.java cs15lsp22zz@ieng6.ucsd.edu:~/`
 
 this should look like 
 
@@ -75,11 +76,11 @@ and after typing in your password again this should put the **WhereAmI.java** fi
 
 So far it is clear to see that having to type in your password every time when logging into the server can take a long time.  It would be much easier to just bypass the password to work much more efficiently.  The solution here are **ssh** keys.  On your own client run the following commands:
 
-> ssh-keygen
+`ssh-keygen`
 
 Generating public/private rsa key pair.
 
-Enter file in which to save the key (/Users/<user-name>/.ssh/id_rsa): /Users/<user-name>/.ssh/id_rsa
+Enter file in which to save the key `(/Users/<user-name>/.ssh/id_rsa): /Users/<user-name>/.ssh/id_rsa`
 
 Enter passphrase (empty for no passphrase): 
 
@@ -98,11 +99,11 @@ Now you need to copy the public key to **.ssh** directory of your user account o
 
 Log onto the server and run the following commands:
 
->mkdir .ssh
+`mkdir .ssh`
 
->exit
+`exit`
 
->scp /Users/user-name/.ssh/id_rsa.pub cs15lsp22zz@ieng6.ucsd.edu:~/.ssh/authorized_keys
+`scp /Users/user-name/.ssh/id_rsa.pub cs15lsp22zz@ieng6.ucsd.edu:~/.ssh/authorized_keys`
 
 Now this should make it so you do not have to put in your password everytime for **ssh** and **scp** commands.  It should look like this:
 
@@ -110,10 +111,10 @@ Now this should make it so you do not have to put in your password everytime for
 
 Now we can run some commands on the server before loging in.  All you need to do is add the command after the **ssh** line in quotes and it will run on the server.
 
->ssh cs15lsp22zz@ieng6.ucsd.edu "ls" 
+`ssh cs15lsp22zz@ieng6.ucsd.edu "ls"` 
 
 will run the "ls" command on the server while still on our own clients.  We can also add semicolons in order to run multiple commands
 
->cp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI
+`cp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI`
 
 Now working remotely will be much easier and more effecient.
