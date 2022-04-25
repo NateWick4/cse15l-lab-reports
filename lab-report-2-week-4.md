@@ -6,9 +6,11 @@ The three bugs that I chose to fix are:
 3. Knowing when the link is a link and not an image.
 ---
 The first bug comes from [this](test1-file.md) file.
-When ran in the first iteration there is an ![infinite loop](Bug1Error.PNG) infinite loop which I showed
+When ran in the first iteration there is an infinite loop which I showed
 by adding ``` System.out.println(currentIndex); ``` which shows its value is never updating
-to break the loop.  This error is fixed when adding and if statement first asking if all four of the 
+to break the loop.  
+![infinite loop](Bug1Error.PNG)
+This error is fixed when adding and if statement first asking if all four of the 
 conditions are there and if not then it breaks the loop.
 ![Image](LabReportAddCode.PNG)
 
